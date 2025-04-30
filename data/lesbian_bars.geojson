@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Ginger's Bar", "Latitude": 40.671526830653526, "Longitude": -73.984256082831735, "Address": "363 5th Ave, Brooklyn", "Category": "Lesbian Bar" }, "geometry": { "type": "Point", "coordinates": [ -73.984256082831735, 40.671526830653526 ] } },
+{ "type": "Feature", "properties": { "Name": "Cubbyhole", "Latitude": 40.738212640855359, "Longitude": -74.003699376429324, "Address": "281 W 12th St, New York", "Category": "Lesbian Bar" }, "geometry": { "type": "Point", "coordinates": [ -74.003699376429324, 40.738212640855359 ] } },
+{ "type": "Feature", "properties": { "Name": "Henrietta Hudson", "Latitude": 40.731262983145811, "Longitude": -74.006238365871212, "Address": "438 Hudson St, New York", "Category": "Lesbian Bar" }, "geometry": { "type": "Point", "coordinates": [ -74.006238365871212, 40.731262983145811 ] } },
+{ "type": "Feature", "properties": { "Name": "The Bush", "Latitude": 40.706129207654456, "Longitude": -73.92469589526263, "Address": "333 Troutman St Store 4, Brooklyn", "Category": "Lesbian Bar" }, "geometry": { "type": "Point", "coordinates": [ -73.92469589526263, 40.706129207654456 ] } }
+]
+}
