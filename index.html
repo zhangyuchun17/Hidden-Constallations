@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hidden Constellations</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="./style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+</head>
+
+<body>
+    <!-- Cover Page -->
+    <div id="cover" class="cover">
+        <h1>Hidden Constellations</h1>
+        <h2>Mapped and Unmapped Queer Sapphic Space in NYC</h2>
+        <h4 class="small-quote">Note: The term 'sapphic' is used in this project to describe individuals who experience emotional, romantic, sensual, or sexual attraction to women or non-men. It intentionally includes people across diverse gender identities and orientations, such as nonbinary individuals and asexual people who feel romantic or emotional connections toward women or non-men.</h4>
+        <div id="cover-arrow">&#x2193;</div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <!-- <div id="nav-arrows">
+        <button id="arrow-up" title="Back to Last Part">&#8679;</button>
+        <button id="arrow-down" title="Skip">&#8681;</button>
+    </div> -->
+
+    <!-- Background Images -->
+    <div id="backgrounds">
+        <div class="bg-img" style="background-image: url('assets/images/bg1.jpg');"></div>
+        <div class="bg-img" style="background-image: url('assets/images/bg2.jpg');"></div>
+        <div class="bg-img" style="background-image: url('assets/images/bg3.jpg');"></div>
+        <div class="bg-img" style="background-image: url('assets/images/bg4.jpg');"></div>
+        <div class="bg-img" style="background-image: url('assets/images/bg5.jpg');"></div>
+        <div class="bg-img" style="background-image: url('assets/images/bg6.jpg');"></div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgm" autoplay loop></audio>
+
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <!-- Compare Images -->
+    <div class="compare-container" style="display: none;">
+        <div class="compare" style="overflow: visible;">
+            <img class="compare__image-one" src="assets/images/past.jpg">
+        
+            <div class="compare__mask">
+              <img class="compare__image-two" src="assets/images/present.jpg">
+            </div>
+        
+            <div class="compare__separator">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="compare__icon" viewBox="0 0 16 16">
+                <path d="M 6 2 L 1 8 L 6 14 M 10 2 L 15 8 L 10 14" stroke="currentColor"></path>
+              </svg>
+            </div>
+
+            <input class="compare__input" type="range" min="0" step="0.5" max="100"/>
+        </div>
+    </div>
+
+    <!-- Image Container -->
+    <div id="image-container" class="image-container" style="display: none;">
+        <div class="image">
+            <img src="" class="image-display" />
+        </div>
+    </div>
+
+    <!-- Story Container -->
+    <div id="story">
+        <div id="features"></div>
+    </div>
+    
+    <!-- Decade selector -->
+    <div id="decade-slider-container" style="display: none;">
+        <label id="decade-label" for="decade-slider">Decade: 2020</label>
+        <input type="range" min="1920" max="2020" step="10" id="decade-slider" value="2020"/>
+    </div>
+
+    <!-- Cogmap grid -->
+    <div class="cogmap-grid-container" style="display: none;">
+        <div id="cogmap-grid" class="cogmap-grid"></div>
+    </div>
+
+    <!-- Cogmap Popup -->
+    <div class="cogmap-popup" style="display: none;">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="cogmap-title"></h2>
+            <img id="cogmap-image" src="" alt="Cogmap Image" />
+            <p id="cogmap-description"></p>
+        </div>
+    </div>
+
+    <div class="interviewee-popup" style="display: none;">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <div class="popup-content-inner">
+                <div class="basic-info">
+                    <img class="avatar"></img>
+                    <h2 class="name"></h2>
+                    <div class="brief"></div>
+                </div>
+                <div class="text">
+                    <h3>Full Interview</h3>
+                    <p class="full-interview"></p>
+                    <h3>Representative Quotes</h3>
+                    <p class="quotes"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-section">
+        <p>© 2025 Hidden Constellations · Designed by Yuki Zhang · Powered by Mapbox & Scrollama</p>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.js'></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script src="config.js"></script>
+    <script src="map.js" defer></script>
+    <script src="setup.js" defer></script>
+    <script src="custom_step_behaviors.js" defer></script>
+    <script src="main.js" defer></script>
+    <!-- <script src="nav.js"></script> -->
+</body>
+
+</html>
