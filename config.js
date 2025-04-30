@@ -579,7 +579,7 @@ const config = {
             full: 'Text for H’s full interview goes here.',
             quotes: ``,
             map: {
-                path: 'assets/map/9_Zao.png',
+                path: 'assets/map/10_Morgan.png',
                 coordinates: [
                     [-74.20, 40.95],
                     [-73.68, 40.95],
