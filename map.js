@@ -174,6 +174,25 @@ map.on('load', () => {
             'raster-opacity': 0.8
         }
     });
+        // west village hand-drawn map
+        map.addSource('handdrawn_overlay_west_village', {
+            type: 'image',
+            url: 'assets/map/handdrawn_overlay_west_village.png',
+            coordinates: [
+                [-74.20, 40.95],
+                [-73.68, 40.95],
+                [-73.68, 40.52],
+                [-74.20, 40.52]
+            ]
+        });
+        map.addLayer({
+            id: 'handdrawn_overlay_west_village-layer',
+            type: 'raster',
+            source: 'handdrawn_overlay_west_village',
+            paint: {
+                'raster-opacity': 0.8
+            }
+        });  
     // icon-layer
     map.addSource('icon-layer', {
         type: 'image',
