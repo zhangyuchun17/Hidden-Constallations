@@ -194,6 +194,53 @@ map.on('load', () => {
         }
     });
 
+    window.markers = [];
+    config.people.forEach((person) => {
+        if (person.icon_map) {
+            map.addSource(`icon-map-${person.name}`, {
+                type: 'image',
+                url: person.icon_map.path,
+                coordinates: person.icon_map.coordinates
+            });
+            map.addLayer({
+                id: `icon-map-${person.name}`,
+                type: 'raster',
+                source: `icon-map-${person.name}`,
+                paint: {
+                    'raster-opacity': 0.8
+                }
+            });
+            // add clickable marker
+            var el = document.createElement('div');
+            el.className = 'marker';
+            el.style.backgroundImage = `url(${person.avatar})`;
+            el.style.width = `50px`;
+            el.style.height = `50px`;
+            el.style.backgroundSize = 'cover';
+            // cursor pointer
+            el.style.cursor = 'pointer';
+            el.style.pointerEvents = 'auto';
+            el.style.zIndex = '99999999999';
+
+            el.addEventListener('click', () => {
+                console.log('Clicked on marker:', person.name);
+                var layerId = `icon-map-${person.name}`;
+                var isVisible = map.getLayoutProperty(layerId, 'visibility') === 'visible';
+                if (isVisible) {
+                    map.setLayoutProperty(layerId, 'visibility', 'none');
+                } else {
+                    map.setLayoutProperty(layerId, 'visibility', 'visible');
+                }
+            });
+            new mapboxgl.Marker(el)
+            .setLngLat(person.icon_map.icon_coordinates)
+            .addTo(map);
+
+            window.markers.push(el);
+            el.style.visibility = 'hidden';
+        }
+    });
+
     // ✅ 控制手绘图透明度
     const steps = ['map-1', 'map-2', 'map-3'];
     const observer = new IntersectionObserver((entries) => {

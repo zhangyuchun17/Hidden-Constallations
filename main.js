@@ -1,37 +1,50 @@
 const stepEnterBehaviors = {
     'map-6': () => {
         toggleDecadeSlider(map, true, 'Gwendolyn Stegall data-layer');
+        toggleLegendVisibility(true);
     },
     'map-8': () => {
         toggleComparisonVisibility(true, 'map-8');
     },
     'map-15': () => {
         map.setFilter('Gwendolyn Stegall data-layer', ['in', '2020s', ['get', 'Decades']]);
+        // hide all icon-map layers
         const allLayers = map.getStyle().layers.map(layer => layer.id);
-        const layersToShow = allLayers.filter(layerId => layerId.startsWith('cogmap-'));
-        window.cogmapLayerShowHandles = [];
-        removeAndShowCogmapsOneByOne();
-        window.cogmapShowHandle = setInterval(removeAndShowCogmapsOneByOne, 1000 * (layersToShow.length + 3)); // 1 second delay for all layers
+        allLayers.forEach(layerId => {
+            if (layerId.startsWith('icon-map')) {
+                map.setLayoutProperty(layerId, 'visibility', 'none');
+            }
+        });
+        // show all markers
+        window.markers.forEach(marker => {
+            marker.style.visibility = 'visible';
+        });
     },
+    'map-18': () => {
+        // breathe effect
+        window.opacityDir = -1;
+        map.setPaintProperty('handdrawn-combined-layer', 'raster-opacity', 0.5);
+        window.breatheHandle = setInterval(breatheHanddrawnLayer, 50);
+    }
 };
 const stepExitBehaviors = {
     'map-6': () => {
         toggleDecadeSlider(map, false, 'Gwendolyn Stegall data-layer');
+        toggleLegendVisibility(false);
     },
     'map-8': () => {
         toggleComparisonVisibility(false, 'map-8');
     },
     'map-15': () => {
-        if (window.cogmapShowHandle) {
-            console.log("clearing cogmapShowHandle");
-            clearInterval(window.cogmapShowHandle);
-            window.cogmapShowHandle = null;
-        }
-        if (window.cogmapLayerShowHandles) {
-            window.cogmapLayerShowHandles.forEach(handle => {
-                clearTimeout(handle);
-            });
-            window.cogmapLayerShowHandles = [];
+        window.markers.forEach(marker => {
+            marker.style.visibility = 'hidden';
+        });
+    },
+    'map-18': () => {
+        map.setPaintProperty('handdrawn-combined-layer', 'raster-opacity', 1.0);
+        if (window.breatheHandle) {
+            clearInterval(window.breatheHandle);
+            window.breatheHandle = null;
         }
     },
 };

@@ -30,8 +30,8 @@ arrow直接删掉
 
 250430 需要改的地方
 ~~what maps dont show: 标题居中，内容压缩宽度~~
-大一点：esha & J
-手绘layer呼吸
+~~大一点：esha & J~~
+~~手绘layer呼吸~~
 ~~最后一页source要居中~~
 ~~slider：范围从00年代开始~~
 slider：图例

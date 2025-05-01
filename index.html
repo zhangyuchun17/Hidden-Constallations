@@ -59,6 +59,9 @@
 
             <input class="compare__input" type="range" min="0" step="0.5" max="100"/>
         </div>
+        <div class="compare__note">
+            <p></p>
+        </div>
     </div>
 
     <!-- Image Container -->
@@ -77,6 +80,34 @@
     <div id="decade-slider-container" style="display: none;">
         <label id="decade-label" for="decade-slider">Decade: 2020</label>
         <input type="range" min="1920" max="2020" step="10" id="decade-slider" value="2020"/>
+    </div>
+
+    <!-- Legend for different colors on map -->
+    <div id="legend" class="legend" style="display: none;">
+        <div class="legend-item">
+            <span class="color-box" style="background-color: #FF00FF;"></span>
+            <span class="label">Official</span>
+        </div>
+        <div class="legend-item">
+            <span class="color-box" style="background-color: #FF6600;"></span>
+            <span class="label">Events</span>
+        </div>
+        <div class="legend-item">
+            <span class="color-box" style="background-color: #8A4FCF;"></span>
+            <span class="label">Pop-up</span>
+        </div>
+        <div class="legend-item">
+            <span class="color-box" style="background-color: #CC7F7F;"></span>
+            <span class="label">Mixed</span>
+        </div>
+        <div class="legend-item">
+            <span class="color-box" style="background-color: #9BB7CC;"></span>
+            <span class="label">Implied</span>
+        </div>
+        <div class="legend-item">
+            <span class="color-box" style="background-color: #4B944B;"></span>
+            <span class="label">Unknown</span>
+        </div>
     </div>
 
     <!-- Cogmap grid -->
@@ -102,13 +133,15 @@
                     <img class="avatar"></img>
                     <h2 class="name"></h2>
                     <div class="brief"></div>
+                    <img class="map"></img>
                 </div>
                 <div class="text">
                     <h3>Full Interview</h3>
                     <p class="full-interview"></p>
                     <h3>Representative Quotes</h3>
-                    <p class="quotes"></p>
+                    <div class="quotes"></div>
                 </div>
+
             </div>
         </div>
     </div>

@@ -246,14 +246,18 @@ PART 2 - 地图 + 文字 Map Layout
     display: none;
     transition: opacity 1s ease;
     pointer-events: none;
-    z-index: 0;
+    z-index: 9999;
+}
+
+.mapboxgl-marker:hover {
+    cursor: pointer;
 }
 
 #decade-slider-container {
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 1000;
+    z-index: 99999999;
     background: rgba(20, 20, 20, 0.8);
     padding: 10px;
     border-radius: 8px;
@@ -261,7 +265,7 @@ PART 2 - 地图 + 文字 Map Layout
 }
 
 #decade-slider {
-    width: 300px;
+    width: 18vw;
 }
 
 /* ==========================
@@ -282,7 +286,7 @@ PART 3.0 认知地图 Cog Map
 .cogmap-grid {
     display: grid;
     grid-template-columns: auto auto auto;
-    gap: 1.5rem;
+    gap: 3vw 6vw;
     padding: 0 5vw 0 2vw;
     justify-items: center;
     align-items: center;
@@ -294,7 +298,7 @@ PART 3.0 认知地图 Cog Map
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    max-width: 250px;
+    max-width: 25vw;
     position: relative;
     background-color: transparent;
 }
@@ -305,7 +309,6 @@ PART 3.0 认知地图 Cog Map
 } */
 .cogmap-card img {
     width: 100%;
-    max-width: 150px;
     aspect-ratio: 1 / 1;
     object-fit: contain;
     border-radius: 5%;
@@ -469,6 +472,7 @@ PART 3 - 人物采访 Interview Section
     flex-direction: row;
     gap: 2rem;
     color: #fff;
+    white-space: pre-line;
 }
 
 .interviewee-popup .popup-content .close-btn {
@@ -499,14 +503,19 @@ PART 3 - 人物采访 Interview Section
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
 }
 
-.interviewee-popup .basic-info img {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
+.interviewee-popup .basic-info .avatar {
+    width: auto;
+    height: 15vh;
+}
+
+.interviewee-popup .basic-info .map {
+    width: auto;
+    height: 30vh;
+    margin-top: 2vh;
 }
 
 .interviewee-popup .basic-info h2 {
@@ -533,7 +542,7 @@ PART 3 - 人物采访 Interview Section
 }
 
 .interviewee-popup .text h3 {
-    margin-top: 0;
+    margin: 0;
     font-size: 1.5rem;
     color: #FF0EFF;
 }
@@ -542,7 +551,12 @@ PART 3 - 人物采访 Interview Section
     font-size: 1.1rem;
     line-height: 1.7;
     color: #ddd;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem;
+}
+
+.interviewee-popup .text .quotes {
+    font-size: 1rem;
+    white-space: normal;
 }
 
 /* 滚动条样式 */
@@ -575,7 +589,7 @@ Footer 页脚部分
 .step#footer {
     padding-top: 15vh;
     padding-bottom: 10vh;
-    height: 50vh;
+    max-width: 60vw;
 }
 
 .step#footer h3 {
@@ -589,6 +603,7 @@ Footer 页脚部分
     padding-left: 2em;
     list-style-type: disc;
     max-width: 800px;
+    white-space: normal;
 }
 
 .footer-section {
@@ -739,10 +754,21 @@ Footer 页脚部分
     stroke-width: 2px;
 }
 
+.compare__note {
+    font-size: 0.9em;
+    position: relative;
+    top: calc(50% + 15vw);
+    left: 0;
+    width: 100%;
+}
+
 /* Dynamic Image Comparison Slider inside story chapters */
+.step.full-compare {
+    text-align: center;
+}
 .big-compare-container {
     position: relative;
-    width: 60vw;
+    width: 30vw;
     margin: 0 auto;
     height: auto;
 }
@@ -880,4 +906,44 @@ PART 4 - Map Image Overlay
 #image-container .image img {
     max-width: 100%;
     max-height: 100%;
+}
+
+/* ==========================
+Legend
+=========================== */
+#legend {
+    position: fixed; /* Fix the legend to the viewport */
+    top: 20px; /* Distance from the top of the screen */
+    left: 51%; /* Position it in the left part of the right half of the screen */
+    width: auto; /* Set a fixed width */
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent white background */
+    border: 2px solid #ccc; /* Light gray border */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    padding: 15px; /* Inner padding for content */
+    font-family: 'EB Garamond', serif; /* Match the font style */
+    color: #333; /* Text color */
+    z-index: 999999;
+}
+
+/* Legend item container */
+.legend-item {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically align items */
+    margin-bottom: 8px; /* Add spacing between items */
+}
+
+/* Color box styling */
+.legend-item .color-box {
+    width: 20px; /* Fixed width for the color box */
+    height: 20px; /* Fixed height for the color box */
+    border-radius: 4px; /* Slightly rounded corners */
+    margin-right: 10px; /* Space between the color box and label */
+    border: 1px solid #aaa; /* Add a border for better visibility */
+}
+
+/* Label styling */
+.legend-item .label {
+    font-size: 0.9em; /* Slightly smaller font size */
+    color: white; /* Subtle text color */
 }

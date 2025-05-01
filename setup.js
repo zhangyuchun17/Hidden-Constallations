@@ -156,6 +156,16 @@ function createImageComparisonSlider(step, chapter) {
     });
 
     step.appendChild(container);
+
+    // compare note
+    const note = document.createElement('div');
+    note.className = 'step-text';
+    const p = document.createElement('p');
+    p.innerHTML = chapter.compare_note;
+    p.style.fontSize = '0.9em';
+    p.style.textAlign = 'center';
+    note.appendChild(p);
+    step.appendChild(note);
 }
 
 function setupImageComparisonSlide() {
@@ -202,3 +212,4 @@ setupDecadeSlider(map, 'Gwendolyn Stegall data-layer');
 setupChapters();
 setupImageComparisonSlide();
 setupCogmapGrid();
+mapContainer.style.zIndex = 99999;

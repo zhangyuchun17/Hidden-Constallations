@@ -16,12 +16,41 @@ function removeAndShowCogmapsOneByOne() {
     }, (layersToShow.length + 1) * 1000); // 1 second delay after all layers
 }
 
+// ========== Handdrawn Layer Breathe Effect ========== //
+function breatheHanddrawnLayer(layerId = 'handdrawn-combined-layer', max_opacity = 0.3, min_opacity = 0.0, step = 0.01) {
+    const handdrawnLayer = map.getLayer(layerId);
+    if (handdrawnLayer) {
+        const currentOpacity = map.getPaintProperty(layerId, 'raster-opacity');
+        // increase or decrease by step based on window.opacityDir
+        let newOpacity = currentOpacity + step * window.opacityDir;
+        if (newOpacity > max_opacity) {
+            newOpacity = max_opacity;
+            window.opacityDir = -1;
+        } else if (newOpacity < min_opacity) {
+            newOpacity = min_opacity;
+            window.opacityDir = 1;
+        }
+        map.setPaintProperty(layerId, 'raster-opacity', newOpacity);
+    }
+}
+
+
 // ========== Toggling Visibility for Specific Steps ========== //
 
 function showBackground(index) {
     document.querySelectorAll('.bg-img').forEach((el, i) => {
         el.classList.toggle('active', i === index);
     });
+}
+
+function toggleLegendVisibility(visible) {
+    const legend = document.querySelector('#legend');
+    if (visible) {
+        legend.style.setProperty('display', 'block');
+    }
+    else {
+        legend.style.setProperty('display', 'none');
+    }
 }
 
 function toggleComparisonVisibility(visibility, mapId) {
@@ -42,6 +71,8 @@ function toggleComparisonVisibility(visibility, mapId) {
             compare_container.style.transition = 'opacity 1s ease';
             compare_container.style.opacity = '1';
         }, 10);
+        const note = document.querySelector('.compare__note p');
+        note.textContent = mapConfig.compare_note;
     }
     else {
         compare_container.style.opacity = '0';
@@ -95,12 +126,14 @@ function showInterviewPopup(person) {
     const quotesElement = popup.querySelector('.quotes');
     const closeBtn = popup.querySelector('.close-btn');
     const avatar = popup.querySelector('.avatar');
+    const map = popup.querySelector('.map');
 
     nameElement.textContent = person.name;
     briefElement.innerHTML = person.brief.join('<br>');
     fullInterviewElement.textContent = person.full;
-    quotesElement.textContent = person.quotes;
+    quotesElement.innerHTML = person.quotes;
     avatar.src = person.avatar;
+    map.src = person.map.path;
 
     closeBtn.addEventListener('click', () => {
         popup.style.display = 'none';
@@ -123,8 +156,6 @@ function toggleMapVisibility(visible) {
         mapContainer.style.setProperty('right', '0');
         mapContainer.style.setProperty('width', '50vw');
         mapContainer.style.setProperty('height', '100vh');
-        mapContainer.style.setProperty('z-index', '0');
-        mapContainer.style.setProperty('pointer-events', 'none');
 
         mapContainer.style.opacity = '0';
         setTimeout(() => {
