@@ -45,7 +45,7 @@ const config = {
             title: 'New York City has more than 250,000 bars.',
             mapLocation: {
                 center: [-73.94, 40.73],
-                zoom: 10.08
+                zoom: 10.5
             },
             layersToShow: ['handdrawn-overlay', 'cishet-bars'],
         },
@@ -183,7 +183,9 @@ const config = {
             <li>Someone realized her queer identity very early and is more familiar with how to move freely in the city. She does not rely on formal queer places, but believes that the atmosphere and experience generated in relationships allow her to "make places queer."</li>
             <li>Someone is active in queer nightlife and sees the power inequality in it. She actively reconstructs space through drag king performances, community activities, etc., to resist the male-dominated or gender-exclusive structure in queer places.</li>
             <li>Some people participated in the construction of sapphic-only spaces as community organizers, and at the same time reflected on the formation mechanism of thresholds: price, atmosphere, and way of speaking all effect who can stay. Her spatial awareness is clearly critical and is constantly adjusting.</li>
-            </ul>`,
+            </ul>
+
+            <span style="font-size: 0.8em; color: #FF0EFF">Click the map to see more details.</span>`,
             column: 3
         },
 
@@ -191,7 +193,9 @@ const config = {
             id: "map-10.1",
             type: "grid",
             alignment: "split-left",
-            description: `Queer sapphic are not a naturally united group, they must first "perceive each other", which is itself part of the spatial practice. These internalized spatial logics form invisible maps—maps shaped not by streets, but by silence, memory, and resistance.`,
+            description: `Queer sapphic are not a naturally united group, they must first "perceive each other", which is itself part of the spatial practice. These internalized spatial logics form invisible maps—maps shaped not by streets, but by silence, memory, and resistance.
+            
+            <span style="font-size: 0.8em; color: #FF0EFF">Click the map to see more details.</span>`,
             column: 3
         },
 
@@ -201,14 +205,14 @@ const config = {
             alignment: 'split-left',
             description: `Yet even when places overlap, experiences rarely do.
             
-            Take Henrietta Hudson, one of the few remaining lesbian bars in New York.
+            Take West Village, one of the few neighborhoods where lesbian bars still remain.
             For some, it offers a rare sense of recognition—a place where sapphic belonging feels assumed rather than negotiated.
             For others, it carries the weight of cost barriers, shifting atmospheres, and a growing sense of distance from what was once imagined.`,
             mapLocation: {
-                center: [-73.95, 40.73],
-                zoom: 10.2
+                center: [-74.006, 40.735],
+                zoom: 13.5
             },
-            layersToShow: ['handdrawn-overlay', 'handdrawn-combined-layer']
+            layersToShow: ['handdrawn-overlay', 'lesbian-bars', 'handdrawn_overlay_west_village-layer']
         },
 
         {
@@ -216,15 +220,14 @@ const config = {
             type: 'map',
             alignment: 'split-left',
             description: `Public spaces, too, unfold differently depending on who enters.
-            In Prospect Park, the wide lawns and wooded paths feel expansive to some, offering a rare softness in the urban fabric.
-            To others, the park’s openness comes with ambiguity: safety changes with time of day, weather, and who else claims the space.
+            In Prospect Park, the wide lawns and wooded paths feel expansive to some, offering a rare softness in the urban fabric. To others, the park’s openness comes with ambiguity: safety changes with time of day, weather, and who else claims the space.
             These differences don’t cancel each other out.
             They weave a richer, messier tapestry of what "queer space" means in practice—not as a fixed category, but as a constantly shifting field of negotiation, memory, and relation.`,
             mapLocation: {
-                center: [-73.96972, 40.70337],
-                zoom: 12
+                center: [-73.968, 40.662],
+                zoom: 14
             },
-            layersToShow: ['handdrawn-overlay', 'handdrawn-combined-layer']
+            layersToShow: ['handdrawn-overlay', 'lesbian-bars', 'handdrawn_overlay_west_village-layer']
         },
 
         {
@@ -232,6 +235,7 @@ const config = {
             type: 'image',
             alignment: 'split-left',
             title: 'Different scales, different practice',
+            media: 'assets/icon/icon-legend-1.png',
             description: `
             These layered experiences remind us that queer space is not just a matter of location, but of how people navigate, reshape, and quietly remake the spaces around them.
             Scale matters, but so do gestures—both the visible acts of claiming space and the quieter adjustments that allow one to stay.
@@ -249,7 +253,7 @@ const config = {
             type: 'image',
             alignment: 'split-left',
             title: 'How do they negotiate border power?',
-            media: 'assets/icon/icon-legend-1.png',
+            media: 'assets/icon/icon-legend-2.png',
             description: `
             Some leave frat parties to escape objectification; some retreat from gay bars where women still feel peripheral. Others explore how to speak and listen in ways that gently redraw the lines of intimacy. Boundaries aren’t fixed—they’re felt, renegotiated, even deferred.
             Boundaries are not binary, they are a process of repeated negotiation, perception, and even delay.
@@ -260,7 +264,7 @@ const config = {
             type: 'image',
             alignment: 'split-left',
             title: 'Becoming Constellations',
-            media: 'assets/icon/icon-legend-1.png',
+            media: 'assets/icon/icon-legend-3.png',
             description: `
             <ul style="white-space: normal;">
             <li>Jean’s transition from bar to drag king is to create a performance space that is not driven by the male gaze</li>
@@ -277,7 +281,6 @@ const config = {
             type: 'grid',
             alignment: 'split-left',
             title: 'The Politics of Mapping',
-            media: 'assets/icon/icon-legend-1/png',
             description: `
             A map is not just where someone has been. It’s where someone was willing to claim presence.
 
@@ -291,15 +294,17 @@ const config = {
             type: 'map',
             alignment: 'split-left',
             mapLocation: {
-                center: [-73.94, 40.73],
-                zoom: 10.2
+                center: [-73.94, 40.68],
+                zoom: 11
             },
             description: `
             As a practice of social-spatial identity, the map itself is a spatial practice. 
 
             Mapping is not just a representational tool. It is a political decision: what gets included, what remains unsaid, and how presence is defined through the act of drawing.
 
-            If absence is political, then so is drawing it.`,
+            If absence is political, then so is drawing it.
+            
+            <span style="font-size: 0.8em; color: #FF0EFF">Click the icon to show the cognitive map.</span>`,
             layersToShow: ['handdrawn-overlay', 'Gwendolyn Stegall data-layer'],
         },
         {
@@ -312,8 +317,8 @@ const config = {
             Several interviewees imagine queer futures rooted not just in nightlife, but in the everyday:
             a shared house near Rockaway beach for surf meetups and cookouts; informal sports groups where anyone can show up and play without knowing the right people; and systems of sharing that don’t rely on being in the right bar at the right time.`,
             mapLocation: {
-                center: [-73.818, 40.583],
-                zoom: 13
+                center: [-73.94, 40.73],
+                zoom: 10.5
             },
             layersToShow: ['handdrawn-overlay', 'handdrawn-combined-layer']
         },
@@ -324,7 +329,7 @@ const config = {
             description: `<blockquote class='quote'>Ideally, we would want to have a house in Rockaway. And then have a home base to have the group over for a cookout afterward, or like a place to rinse off. Or something more centered there. Because we do—I call them “land activities”—but like hangouts in Brooklyn or Manhattan. Just not centered around surfing. Like, we had a watch party for the Olympics, or just casual things like that. I think it would be fun to have a home-base house, and then maybe go on trips. Like small group surf trips to other places.<span style='font-style: normal;'> — Julia</span></blockquote>`,
             mapLocation: {
                 center: [-73.818, 40.583],
-                zoom: 14
+                zoom: 12
             },
             layersToShow: ['handdrawn-overlay', 'handdrawn-combined-layer']
         },
@@ -336,8 +341,8 @@ const config = {
 
             "I don’t want to have to seek out queer spaces, they should appear around me."`,
             mapLocation: {
-                center: [-73.818, 40.583],
-                zoom: 11
+                center: [-73.94, 40.73],
+                zoom: 10.5
             },
             layersToShow: ['handdrawn-overlay', 'handdrawn-combined-layer', 'icon-layer'],
         },
@@ -412,7 +417,7 @@ const config = {
             <blockquote class='quote'>"There’s a real risk of erasure."</blockquote>
             <blockquote class='quote'>"These spaces are essential, but if no one shows up, they disappear."</blockquote>`,
             map: {
-                path: 'assets/images/handdrawn_map1.png',
+                path: 'assets/images/1_Jean.png',
                 coordinates: [
                     [-74.20, 40.95],
                     [-73.68, 40.95],
@@ -553,7 +558,7 @@ const config = {
                     [-73.68, 40.52],
                     [-74.20, 40.52]
                 ],
-                icon_coordinates: [-73.9157, 40.6797],
+                icon_coordinates: [-73.9299, 40.7070],
             }
         },
         {
@@ -594,7 +599,7 @@ const config = {
                     [-73.68, 40.52],
                     [-74.20, 40.52]
                 ],
-                icon_coordinates: [-73.9227, 40.6936],
+                icon_coordinates: [-73.9299, 40.6936],
             }
         },
         {
@@ -634,7 +639,7 @@ const config = {
                     [-73.68, 40.52],
                     [-74.20, 40.52]
                 ],
-                icon_coordinates: [-73.9114, 40.6943],
+                icon_coordinates: [-73.9100, 40.6943],
             }
         },
         {
@@ -679,7 +684,7 @@ const config = {
                     [-73.68, 40.52],
                     [-74.20, 40.52]
                 ],
-                icon_coordinates: [74.0614, -40.7368],
+                icon_coordinates: [-74.0614, 40.7368],
             }
         },
         {
@@ -722,7 +727,7 @@ const config = {
                     [-73.68, 40.52],
                     [-74.20, 40.52]
                 ],
-                icon_coordinates: [-73.9459, 40.6759],
+                icon_coordinates: [-73.9530, 40.7000],
             }
         },
         {
@@ -796,26 +801,26 @@ const config = {
 
             <blockquote class='quote'>"Since growing more comfortable in my identity, I care less and less about how others perceive me."</blockquote>`,
             map: {
-                path: 'assets/map/9_Zao.png',
+                path: 'assets/map/10_Morgan.png',
                 coordinates: [
                     [-74.20, 40.95],
                     [-73.68, 40.95],
                     [-73.68, 40.52],
                     [-74.20, 40.52]
                 ],
-                hint: 'Beach',
-                description: 'Sapphic Surf is a grassroots organization that promotes sapphic-centered public space through surfing. They organize events and activities that foster community and connection among queer'
+                hint: 'Portraits',
+                description: 'This map briefly outlines the areas of Brooklyn and Queens, which is more private and relational, but the use of portraits emphasizes subjectivity and subjective spatial perception.'
             },
-            // icon_map: {
-            //     path: 'assets/icon-map/10_Morgan.png',
-            //     coordinates: [
-            //         [-74.20, 40.95],
-            //         [-73.68, 40.95],
-            //         [-73.68, 40.52],
-            //         [-74.20, 40.52]
-            //     ],
-            //     icon_coordinates: [-73.9520, 40.7310]
-            // }
+            icon_map: {
+                 path: 'assets/icon-map/10.png',
+                 coordinates: [
+                     [-74.20, 40.95],
+                     [-73.68, 40.95],
+                     [-73.68, 40.52],
+                     [-74.20, 40.52]
+                 ],
+                 icon_coordinates: [-73.9520, 40.7310]
+             }
         }
     ]
 }
