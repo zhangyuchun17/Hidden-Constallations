@@ -418,7 +418,7 @@ const config = {
             <blockquote class='quote'>"There’s a real risk of erasure."</blockquote>
             <blockquote class='quote'>"These spaces are essential, but if no one shows up, they disappear."</blockquote>`,
             map: {
-                path: 'assets/images/1_Jean.png',
+                path: 'assets/map/1_Jean.png',
                 coordinates: [
                     [-74.20, 40.95],
                     [-73.68, 40.95],
