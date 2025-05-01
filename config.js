@@ -383,9 +383,10 @@ const config = {
             <li>NYC Open Data <a href="https://opendata.cityofnewyork.us/" style="color: #FF0EFF;">(Links)</a></li>
             <li>NYC LGBT Historic Sites Project <a style="color: #FF0EFF" href="https://www.nyclgbtsites.org/">(Links)</a></li>
             <li>Mattson, G. (2019). Are Gay Bars Closing? Using Business Listings to Infer Rates of Gay Bar Closure in the United States, 1977–2019. Socius, 5. <a style="color: #FF0EFF" href="https://doi.org/10.1177/2378023119894832">(Links)</a></li>
-            <li>Mattson, G. (2021, June 16). The changing mix of gay bar subtypes after COVID-19 restrictions in the United States, 2017-2023. <a style="color: #FF0EFF" href="https://doi.org/10.31235/osf.io/4uw6j>(Links)</a> </li>
+            <li>Mattson, G. (2021, June 16). The changing mix of gay bar subtypes after COVID-19 restrictions in the United States, 2017-2023. <a style="color: #FF0EFF" href="https://doi.org/10.31235/osf.io/4uw6j">(Links)</a> </li>
             <li>Addresses Project by Gwen Shockey <a style="color: #FF0EFF" href="https://addressesproject.com/">(Links)</a> </li>
             <li>Stegall, G. (2019). A Spatial History of Lesbian Bars in New York City. <a style="color: #FF0EFF" href="https://doi.org/10.7916/d8-k46h-fa23">(Links)</a></li>
+            
             </ul>
             Other Source
             <ul>
