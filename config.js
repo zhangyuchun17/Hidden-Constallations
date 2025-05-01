@@ -807,7 +807,7 @@ const config = {
                 description: 'Sapphic Surf is a grassroots organization that promotes sapphic-centered public space through surfing. They organize events and activities that foster community and connection among queer'
             },
             // icon_map: {
-            //     path: 'assets/icon-map/10.png',
+            //     path: 'assets/icon-map/10_Morgan.png',
             //     coordinates: [
             //         [-74.20, 40.95],
             //         [-73.68, 40.95],
