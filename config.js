@@ -425,8 +425,8 @@ const config = {
                     [-73.68, 40.52],
                     [-74.20, 40.52]
                 ],
-                hint: 'Beach',
-                description: 'Sapphic Surf is a grassroots organization that promotes sapphic-centered public space through surfing. They organize events and activities that foster community and connection among queer'
+                hint: 'Zoning',
+                description: 'Jean traces queer space through boundaries—social, cultural, and emotional—revealing how certain areas feel saturated, others invisible, and many shaped by who is allowed in or left out.'
             },
             icon_map: {
                  path: 'assets/icon-map/1.png',
@@ -567,7 +567,7 @@ const config = {
             sentence: 'She transforms a male-dominated surf zone into a joyful, sapphic gathering grounded in shared presence and ease.',
             avatar: 'assets/icon/5.png',
             brief: [
-                'Pronouns: unknown',
+                'Pronouns: She/her',
                 '7th Year in NYC',
                 'Co-founder of Sapphic Surf'
             ],
