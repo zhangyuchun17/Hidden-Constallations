@@ -103,7 +103,7 @@ const config = {
             type: 'image',
             alignment: 'split-left',
             media: 'assets/images/chart2.png',
-            description: `As sociologist <a href="https://doi.org/10.1177/2378023119894832" style="color: #FF0EFF;">Greggor Mattson</a> notes, the national bar guides tracking queer spaces were produced by all-male teams until the early '90s. Lesbian bars were likely undercounted—not absent, just unacknowledged. A woman’s guide didn’t appear until 1990. Before that, lesbian life largely existed in the margins of male-centric records.
+            description: `As sociologist <a href="https://doi.org/10.1177/2378023119894832" target="_blank" rel="noopener noreferrer" style="color: #FF0EFF;">Greggor Mattson</a> notes, the national bar guides tracking queer spaces were produced by all-male teams until the early '90s. Lesbian bars were likely undercounted—not absent, just unacknowledged. A woman’s guide didn’t appear until 1990. Before that, lesbian life largely existed in the margins of male-centric records.
             
             The maps we inherit often reflect the eyes that made them.`
         },
@@ -118,7 +118,7 @@ const config = {
             },
             layersToShow: ['handdrawn-overlay', 'Gwendolyn Stegall data-layer'],
             description: `
-            <a href="http://map.addressesproject.com/" style="color: #FF0EFF;">Gwendolyn Stegall</a> has compiled a database that documents the opening and closing of queer sapphic’s spaces in New York City, including bars, events, and pop-ups, over decades. This new map not only traces the flux of bar spaces, but also broadens the narrative beyond nightlife persistence.
+            <a href="http://map.addressesproject.com/" target="_blank" rel="noopener noreferrer" style="color: #FF0EFF;">Gwendolyn Stegall</a> has compiled a database that documents the opening and closing of queer sapphic’s spaces in New York City, including bars, events, and pop-ups, over decades. This new map not only traces the flux of bar spaces, but also broadens the narrative beyond nightlife persistence.
                         
             Still, the data reflects certain biases.
                         
@@ -133,7 +133,7 @@ const config = {
             <blockquote class="quote">"When I talk about money... I’m not earning a steady paycheck yet, so that definitely shapes the kinds of places I end up going to and what feels accessible to me right now."<span style="font-style: normal;"> — Alex</span></blockquote>
 
             They can’t capture how someone adjusts their posture, or who hesitates at the door.
-            <blockquote class="quote">"I attend women’s and non-binary community events in my friend’s living rooms near K-Town or in Brooklyn, making me feel safe and comfortable."<span style="font-style: normal;"> — Kloe, a non-binary woman</span></blockquote>
+            <blockquote class="quote">"I attend women’s and non-binary community events in my friend’s living rooms near K-Town or in Brooklyn, making me feel safe and comfortable."<span style="font-style: normal;"> — Kloe, who identifies as a non-binary femme</span></blockquote>
             
             Some places feel safe, others don’t. But maps aren’t sensitive to atmosphere. They don’t read discomfort, silence, or relief. 
             <blockquote class="quote">"There’s something comforting about going to an intentionally sapphic space, where everyone knows why they’re there—even if it’s unspoken."<span style="font-style: normal;"> — Esha​</blockquote>
@@ -267,14 +267,14 @@ const config = {
             media: 'assets/icon/icon-legend-3.png',
             description: `
             <ul style="white-space: normal;">
-            <li>Jean’s transition from bar to drag king is to create a performance space that is not driven by the male gaze</li>
-            <li>Jesse uses MOOR to weave a spatial protocol so that silent people can speak</li>
-            <li>Alex feels "queer moments" when riding subway and chatting in the living room</li>
-            <li>J seldom entered a lesbian bar or came out publicly, but every time she exits is political: she is guarding a possibility</li>
-            <li>Kloe reflects on the sense of belonging of "relationship rather than space" in feminist group</li>
+            <li>Jean, Zao, and Morgan contribute to queer spaces led by women and gender-diverse people—through performance, soft gatherings, and everyday acts of advocacy—spaces that are relational, culturally grounded, and inclusive beyond mainstream gay venues.</li>
+            <li>Jesse and Kloe nurture women and non-binary communities where healing, mutual recognition, and gentle boundaries matter more than fixed identities or rigid labels.</li>
+            <li>Alex, J and Morgan find queer moments in the everyday—in subways, living rooms, and quiet gestures—where intimacy arises not from architecture, but from shared presence and emotional attunement.</li>
+            <li>Julia and Tati embrace women-led physical spaces like basketball courts, challenging gendered hierarchies within the broader queer landscape and advocating for sapphic-specific visibility.</li>
+            <li>J and Esha reflect on how racial and cultural backgrounds shape queer expression, gravitating toward spaces where intersectional identities can be safely and self-authored.</li>
             </ul>
-            These people do not belong to a unified group, but they form a non-linear, mutually responsive constellation.
-            Not represent, but resonate.`
+            These threads do not form a single narrative, but a constellation—nonlinear, interdependent, and alive with shared frequencies of presence, resonance, and becoming.  
+            <em>Not to represent, but to resonate.</em>`
         },
         {
             id: 'map-15.0',
