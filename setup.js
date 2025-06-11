@@ -74,6 +74,12 @@ function createInterviewChapter(step, chapter) {
         step.appendChild(h3);
     }
 
+    if (chapter.description) {
+        const p = document.createElement('p');
+        p.innerHTML = chapter.description;
+        step.appendChild(p);
+    }
+
     const container = document.createElement('div');
     container.className = 'interview-grid';
     step.appendChild(container);

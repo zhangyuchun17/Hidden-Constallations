@@ -198,24 +198,63 @@ function updateCogmapGrid(column, keep_list=null) {
     }  
 }
 
+current_image_container_index = -1;
+current_image_container = null;
 function toggleImageContainerVisibility(visible, chapter) {
-    const imageContainer = document.querySelector('.image-container');
+    // const imageContainer = document.querySelector('.image-container');
+    // if (visible) {
+    //     const img = document.querySelector('.image-container img');
+    //     img.src = chapter.media;
+
+    //     imageContainer.style.setProperty('display', 'flex');
+    //     imageContainer.style.setProperty('opacity', '0');        
+
+    //     setTimeout(() => {
+    //         imageContainer.style.transition = 'opacity 1s ease';
+    //         imageContainer.style.opacity = '1';
+    //     }, 20);
+    // } else {
+    //     imageContainer.style.setProperty('opacity', '0');
+    //     setTimeout(() => {
+    //         imageContainer.style.setProperty('display', 'none');
+    //     }, 1000);
+    // }
+    // modify the above code to support transition between 2 image containers
     if (visible) {
-        const img = document.querySelector('.image-container img');
+        // if there are no image containers, use the first one with id image-container-1/2
+        if (current_image_container_index === -1) {
+            current_image_container_index = 0;
+            current_image_container = document.getElementById('image-container-1');
+        }
+        else {
+            // fade out the current image container
+            current_image_container.style.opacity = '0';
+            const container_to_hide = current_image_container;
+            setTimeout(() => {
+                container_to_hide.style.display = 'none';
+            }, 1000);
+            current_image_container_index = (current_image_container_index + 1) % 2;
+            current_image_container = document.getElementById(`image-container-${current_image_container_index + 1}`);
+        }
+        const img = current_image_container.querySelector('img');
         img.src = chapter.media;
-
-        imageContainer.style.setProperty('display', 'flex');
-        imageContainer.style.setProperty('opacity', '0');        
-
+        current_image_container.style.display = 'flex';
+        current_image_container.style.opacity = '0';
+        const container_to_show = current_image_container;
         setTimeout(() => {
-            imageContainer.style.transition = 'opacity 1s ease';
-            imageContainer.style.opacity = '1';
-        }, 20);
-    } else {
-        imageContainer.style.setProperty('opacity', '0');
-        setTimeout(() => {
-            imageContainer.style.setProperty('display', 'none');
-        }, 1000);
+            container_to_show.style.opacity = '1';
+        }, 50);
+    }
+    else {
+        if (current_image_container) {
+            current_image_container.style.opacity = '0';
+            const container_to_hide = current_image_container;
+            setTimeout(() => {
+                container_to_hide.style.display = 'none';
+            }, 1000);
+            current_image_container = null;
+            current_image_container_index = -1; // reset index
+        }
     }
 }
 

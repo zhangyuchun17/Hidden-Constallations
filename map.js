@@ -16,8 +16,32 @@ const map = new mapboxgl.Map({
 // window.map = map;
 // window.mapContainer = mapContainer;
 
+const iconNum = 5;
+const colors = ["cccccc", '9B59B6', '9B59B655', 'FF0EFF', 'ff00ff', 'ff6600', '8a4fcf', 'cc7f7f', '9bb7cc', '4b944b'];
+
+function assignRandomIconsWithFixedColor(geojson, color) {
+  geojson.features.forEach(feature => {
+    const randomIndex = Math.floor(Math.random() * iconNum);
+    const iconName = `colored_dot_${randomIndex + 1}_${color}`;
+    feature.properties.icon = iconName;
+  });
+  return geojson;
+}
+
 map.on('load', () => {
     console.log('Map loaded');
+
+    // 0. upload icon images
+    // format as colored_dot_{index}_{color} for all indices paired with all colors
+    for (let i = 0; i < iconNum; i++) {
+        for (let j = 0; j < colors.length; j++) {
+            const iconName = `colored_dot_${i+1}_${colors[j]}`;
+            map.loadImage(`assets/dots/${iconName}.png`, (error, image) => {
+                if (error) throw error;
+                map.addImage(iconName, image);
+            });
+        }
+    }
 
     // 1. 隐藏底图所有背景和线框类图层
     const layers = map.getStyle().layers;
@@ -61,80 +85,164 @@ map.on('load', () => {
     });
 
     // 3. Add sources and layers for cishet, LGBTQ+, and lesbian bars
-    map.addSource('cishet-bars', {
-        type: 'geojson',
-        data: 'assets/data/cishet_bars.geojson'
-    });
+    fetch('assets/data/cishet_bars.geojson')
+    .then(response => response.json())
+    .then(originalGeojson => {
+        const geojsonWithIcons = assignRandomIconsWithFixedColor(originalGeojson, 'cccccc');
+        map.addSource('cishet-bars', {
+            type: 'geojson',
+            data: geojsonWithIcons
+        });
+        map.addLayer({
+            id: 'cishet-bars',
+            type: 'symbol', // 'circle'
+            source: 'cishet-bars',
+            layout: {
+                'icon-image': ['get', 'icon'],
+                'icon-size': 0.03,
+                'icon-allow-overlap': true,
+                'icon-ignore-placement': true,
+            },
+            // paint: {
+            //     'circle-radius': 4,
+            //     'circle-color': '#cccccc',
+            //     'circle-opacity': 0.7
+            // }
+        });
 
-    map.addLayer({
-        id: 'cishet-bars',
-        type: 'circle',
-        source: 'cishet-bars',
-        paint: {
-            'circle-radius': 4,
-            'circle-color': '#cccccc',
-            'circle-opacity': 0.7
-        }
-    });
+    fetch('assets/data/LGBTQ_bars.geojson')
+    .then(response => response.json())
+    .then(originalGeojson => {
+        const geojsonWithIcons = assignRandomIconsWithFixedColor(originalGeojson, '9B59B6');
+        map.addSource('lgbtq-bars', {
+            type: 'geojson',
+            data: geojsonWithIcons
+        });
+        map.addLayer({
+            id: 'lgbtq-bars',
+            type: 'symbol', // 'circle'
+            source: 'lgbtq-bars',
+            layout: {
+                'icon-image': ['get', 'icon'],
+                'icon-size': 0.03,
+                'icon-allow-overlap': true,
+                'icon-ignore-placement': true,
+                
+            },
+            // paint: {
+            //     'circle-radius': 5,
+            //     'circle-color': '#9B59B6', // 紫色
+            //     'circle-opacity': 0.8
+            // }
+        });
 
-    map.addSource('lgbtq-bars', {
-        type: 'geojson',
-        data: 'assets/data/LGBTQ_bars.geojson'
-    });
+    fetch('assets/data/LGBTQ_bars.geojson')
+    .then(response => response.json())
+    .then(originalGeojson => {
+        const geojsonWithIcons = assignRandomIconsWithFixedColor(originalGeojson, '9B59B655');
+        map.addSource('lgbtq-bars-dim', {
+            type: 'geojson',
+            data: geojsonWithIcons
+        });
+        map.addLayer({
+            id: 'lgbtq-bars-dim',
+            type: 'symbol', // 'circle'
+            source: 'lgbtq-bars-dim',
+            layout: {
+                'icon-image': ['get', 'icon'],
+                'icon-size': 0.03,
+                'icon-allow-overlap': true,
+                'icon-ignore-placement': true,
+                
+            },
+            // paint: {
+            //     'circle-radius': 5,
+            //     'circle-color': '#9B59B6', // 紫色
+            //     'circle-opacity': 0.8
+            // }
+        });
+    
+    fetch('assets/data/lesbian_bars.geojson')
+    .then(response => response.json())
+    .then(originalGeojson => {
+        const geojsonWithIcons = assignRandomIconsWithFixedColor(originalGeojson, 'FF0EFF');
+        map.addSource('lesbian-bars', {
+            type: 'geojson',
+            data: geojsonWithIcons
+        });
 
-    map.addLayer({
-        id: 'lgbtq-bars',
-        type: 'circle',
-        source: 'lgbtq-bars',
-        paint: {
-            'circle-radius': 5,
-            'circle-color': '#9B59B6', // 紫色
-            'circle-opacity': 0.8
-        }
-    });
-
-    map.addSource('lesbian-bars', {
-        type: 'geojson',
-        data: 'assets/data/lesbian_bars.geojson'
-    });
-
-    map.addLayer({
-        id: 'lesbian-bars',
-        type: 'circle',
-        source: 'lesbian-bars',
-        paint: {
-            'circle-radius': 6,
-            'circle-color': '#FF0EFF', // 亮紫色
-            'circle-opacity': 0.9
-        }
-    });
+        map.addLayer({
+            id: 'lesbian-bars',
+            type: 'symbol', // 'circle'
+            source: 'lesbian-bars',
+            layout: {
+                'icon-image': ['get', 'icon'],
+                'icon-size': 0.03,
+                'icon-allow-overlap': true,
+                'icon-ignore-placement': true,
+            },
+            // paint: {
+            //     'circle-radius': 6,
+            //     'circle-color': '#FF0EFF', // 亮紫色
+            //     'circle-opacity': 0.9
+            // }
+        });
 
     // 4. 加载数据点图层
-    map.addSource('Gwendolyn Stegall data', {
-        type: 'geojson',
-        data: './assets/data/lesbian_bars_final.geojson'
-    });
+    const CATEGORY_COLORS = {
+        'Official': 'ff00ff',
+        'Events': 'ff6600',
+        'Pop-up': '8a4fcf',
+        'Mixed': 'cc7f7f',
+        'Implied': '9bb7cc',
+        'Unknown': '4b944b'
+    };
 
-    map.addLayer({
-        id: 'Gwendolyn Stegall data-layer',
-        type: 'circle',
-        source: 'Gwendolyn Stegall data',
-        paint: {
-            'circle-radius': 6,
-            'circle-color': [
-                'match',
-                ['get', 'Category Code'],
-                'Official', '#ff00ff',
-                'Events', '#ff6600',
-                'Pop-up', '#8a4fcf',
-                'Mixed', '#cc7f7f',
-                'Implied', '#9bb7cc',
-                'Unknown', '#4b944b',
-    /* default */ '#999999'
-            ],
-            'circle-opacity': 0.9
-        }
+    // Default color if category is missing or unknown
+    const DEFAULT_COLOR = '999999';
+
+    // Step 1: Load the GeoJSON
+    fetch('./assets/data/lesbian_bars_final.geojson')
+    .then(res => res.json())
+    .then(geojson => {
+        // Step 2: Assign icon name to each feature
+        geojson.features.forEach(feature => {
+            const category = feature.properties['Category Code'] || 'Unknown';
+
+            // Get color from fixed map or use default
+            const color = CATEGORY_COLORS[category] || DEFAULT_COLOR;
+
+            // Assign random shape index
+            const shapeIndex = Math.floor(Math.random() * iconNum);
+
+            // Build icon name
+            const iconName = `colored_dot_${shapeIndex + 1}_${color}`;
+            feature.properties.icon = iconName;
+        });
+
+        // Step 3: Add source
+        map.addSource('Gwendolyn Stegall data', {
+            type: 'geojson',
+            data: geojson
+        });
+
+        map.addLayer({
+            id: 'Gwendolyn Stegall data-layer',
+            type: 'symbol',
+            source: 'Gwendolyn Stegall data',
+            layout: {
+                'icon-image': ['get', 'icon'],
+                'icon-size': 0.03,
+                'icon-allow-overlap': true,
+                'icon-ignore-placement': true,
+            }
+        });
     });
+    });
+    });
+    });
+    });
+   
 
     // 5. add hand-drawn images done by interviewees
     config.people.forEach(person => {

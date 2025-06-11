@@ -144,6 +144,9 @@ PART 1 - 文字内容 Story
 .step.interview h3 {
     text-align: center;
 }
+.step.interview p {
+    text-align: center;
+}
 
 .step.text p {
     max-width: 60vw;
@@ -885,7 +888,7 @@ Footer 页脚部分
 PART 4 - Map Image Overlay
 ========================== */
 
-#image-container {
+.image-container {
     position: fixed;
     top: 0;
     right: 0;
@@ -897,13 +900,13 @@ PART 4 - Map Image Overlay
     z-index: 1000;
 }
 
-#image-container .image {
+.image-container .image {
     max-width: 90%;
     max-height: 90%;
     text-align: center;
 }
 
-#image-container .image img {
+.image-container .image img {
     max-width: 100%;
     max-height: 100%;
 }
@@ -946,4 +949,8 @@ Legend
 .legend-item .label {
     font-size: 0.9em; /* Slightly smaller font size */
     color: white; /* Subtle text color */
+}
+
+#decade-slider-container input[type='range']{
+    accent-color: #FF0EFF;
 }

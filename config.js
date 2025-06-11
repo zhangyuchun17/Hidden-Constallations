@@ -47,7 +47,7 @@ const config = {
                 center: [-73.94, 40.73],
                 zoom: 10.5
             },
-            layersToShow: ['handdrawn-overlay', 'cishet-bars'],
+            layersToShow: ['handdrawn-overlay', 'cishet-bars', 'lgbtq-bars'],
         },
         {
             id: 'map-2',
@@ -58,7 +58,7 @@ const config = {
                 center: [-73.94, 40.73],
                 zoom: 10.77
             },
-            layersToShow: ['handdrawn-overlay', 'lgbtq-bars'],
+            layersToShow: ['handdrawn-overlay', 'lgbtq-bars', 'lesbian-bars'],
         },
         {
             id: 'map-3',
@@ -88,7 +88,7 @@ const config = {
                 center: [-73.94, 40.73],
                 zoom: 11.5
             },
-            layersToShow: ['handdrawn-overlay', 'lesbian-bars'],
+            layersToShow: ['handdrawn-overlay', 'lesbian-bars', 'lgbtq-bars-dim'],
         },
 
         {
@@ -122,7 +122,10 @@ const config = {
                         
             Still, the data reflects certain biases.
                         
-            The presence or absence of bars often says more about what was documented than what actually existed. For example, the notable cluster of Harlem bars in the 1930s appears largely due to the inclusion of the Map of Harlem Night Spots Frequented by African American Lesbians in the 1930s and 1940s, from The Other Black Woman.`,
+            The presence or absence of bars often says more about what was documented than what actually existed. For example, the notable cluster of Harlem bars in the 1930s appears largely due to the inclusion of the Map of Harlem Night Spots Frequented by African American Lesbians in the 1930s and 1940s, from The Other Black Woman.
+            
+            
+            <span style="font-size: 0.8em; color: #FF0EFF">Drag the slider to view the changes.</span>`,        
         },
         {
             id: 'map-7',
@@ -304,7 +307,7 @@ const config = {
 
             If absence is political, then so is drawing it.
             
-            <span style="font-size: 0.8em; color: #FF0EFF">Click the icon to show the cognitive map.</span>`,
+            <span style="font-size: 0.8em; color: #FF0EFF">Click the icon to show the cognitive map.\nClick again to hide.</span>`,
             layersToShow: ['handdrawn-overlay', 'Gwendolyn Stegall data-layer'],
         },
         {
@@ -368,6 +371,7 @@ const config = {
             id: 'interview-section',
             type: 'interview',
             title: 'Listen to Their Stories',
+            description: '<span style="font-size: 0.9em; color: #FF0EFF">Click on the avatars to read their stories.</span>',
             alignment: 'full',
         },
         // Footer Section
@@ -380,20 +384,20 @@ const config = {
             
             Data Source
             <ul>
-            <li>NYC Open Data <a href="https://opendata.cityofnewyork.us/" style="color: #FF0EFF;">(Links)</a></li>
-            <li>NYC LGBT Historic Sites Project <a style="color: #FF0EFF" href="https://www.nyclgbtsites.org/">(Links)</a></li>
-            <li>Mattson, G. (2019). Are Gay Bars Closing? Using Business Listings to Infer Rates of Gay Bar Closure in the United States, 1977–2019. Socius, 5. <a style="color: #FF0EFF" href="https://doi.org/10.1177/2378023119894832">(Links)</a></li>
-            <li>Mattson, G. (2021, June 16). The changing mix of gay bar subtypes after COVID-19 restrictions in the United States, 2017-2023. <a style="color: #FF0EFF" href="https://doi.org/10.31235/osf.io/4uw6j">(Links)</a> </li>
-            <li>Addresses Project by Gwen Shockey <a style="color: #FF0EFF" href="https://addressesproject.com/">(Links)</a> </li>
-            <li>Stegall, G. (2019). A Spatial History of Lesbian Bars in New York City. <a style="color: #FF0EFF" href="https://doi.org/10.7916/d8-k46h-fa23">(Links)</a></li>
+            <li>NYC Open Data <a href="https://opendata.cityofnewyork.us/" target="_blank" rel="noopener noreferrer" style="color: #FF0EFF;">(Links)</a></li>
+            <li>NYC LGBT Historic Sites Project <a style="color: #FF0EFF" href="https://www.nyclgbtsites.org/" target="_blank" rel="noopener noreferrer">(Links)</a></li>
+            <li>Mattson, G. (2019). Are Gay Bars Closing? Using Business Listings to Infer Rates of Gay Bar Closure in the United States, 1977–2019. Socius, 5. <a style="color: #FF0EFF" href="https://doi.org/10.1177/2378023119894832" target="_blank" rel="noopener noreferrer">(Links)</a></li>
+            <li>Mattson, G. (2021, June 16). The changing mix of gay bar subtypes after COVID-19 restrictions in the United States, 2017-2023. <a style="color: #FF0EFF" href="https://doi.org/10.31235/osf.io/4uw6j" target="_blank" rel="noopener noreferrer">(Links)</a> </li>
+            <li>Addresses Project by Gwen Shockey <a style="color: #FF0EFF" href="https://addressesproject.com/" target="_blank" rel="noopener noreferrer">(Links)</a> </li>
+            <li>Stegall, G. (2019). A Spatial History of Lesbian Bars in New York City. <a style="color: #FF0EFF" href="https://doi.org/10.7916/d8-k46h-fa23" target="_blank" rel="noopener noreferrer">(Links)</a></li>
             
             </ul>
             Other Source
             <ul>
             <li>Interviews conducted by Yuki Zhang, Spring 2025</li>
             <li>Map styles adapted from Mapbox Studio</li>
-            <li>Visualization and Website Design refers to canner.nyc <a style="color: #FF0EFF" href="https://canners.nyc">(Links)</a> and Feminist Spatial Practice <a style="color: #FF0EFF" href="https://feministspatialpractices.com/">(Links)</a></li>
-            <li>Narrative is inspired by: Oswin, N. (2008). Critical geographies and the uses of sexuality: deconstructing queer space. Progress in Human Geography, 32(1), 89-103. <a style="color: #FF0EFF;" href="https://doi.org/10.1177/0309132507085213">(Links)</a> And Constellating Queer Spaces (2018) <a style="color: #FF0EFF;" href="https://urbanomnibus.net/2018/02/constellating-queer-spaces/">(Links)</a></li>
+            <li>Visualization and Website Design refers to canner.nyc <a style="color: #FF0EFF" href="https://canners.nyc" target="_blank" rel="noopener noreferrer">(Links)</a> and Feminist Spatial Practice <a style="color: #FF0EFF" href="https://feministspatialpractices.com/" target="_blank" rel="noopener noreferrer">(Links)</a></li>
+            <li>Narrative is inspired by: Oswin, N. (2008). Critical geographies and the uses of sexuality: deconstructing queer space. Progress in Human Geography, 32(1), 89-103. <a style="color: #FF0EFF;" href="https://doi.org/10.1177/0309132507085213" target="_blank" rel="noopener noreferrer">(Links)</a> And Constellating Queer Spaces (2018) <a style="color: #FF0EFF;" href="https://urbanomnibus.net/2018/02/constellating-queer-spaces/" target="_blank" rel="noopener noreferrer">(Links)</a></li>
             </ul>`,
             content: '© 2025 Hidden Constellations · Designed by Yuki Zhang · Powered by Mapbox & Scrollama',
             backgroundIndex: null
